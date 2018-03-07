@@ -4,7 +4,7 @@
  * 
  * Simple img srcset generator snippet for Evolution CMS
  *
- * @version      1.0.0
+ * @version      1.0.1
  * @author       Piotr Matysiak (pmfx)
  * @category     snippet
  * @internal     @properties 

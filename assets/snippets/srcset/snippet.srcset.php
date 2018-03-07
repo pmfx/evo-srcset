@@ -4,7 +4,7 @@
  * 
  * Simple img srcset generator snippet for Evolution CMS
  *
- * @version      1.0.0
+ * @version      1.0.1
  * @author       Piotr Matysiak (pmfx)
  * @category     snippet
  * @internal     @properties 
@@ -40,17 +40,19 @@ if(!defined('MODX_BASE_PATH')) {die('What are you doing? Get out of here!');}
  * format sizes
  */
 
-$sizes      = str_replace(array("\r\n", "\r"), "\n", $sizes);
-$sizesLines = explode("\n", $sizes);
-$sizesNew   = array();
+if (!empty($sizes)) {
+  $sizes      = str_replace(array("\r\n", "\r"), "\n", $sizes);
+  $sizesLines = explode("\n", $sizes);
+  $sizesNew   = array();
 
-foreach ($sizesLines as $i => $sizesLine) {
-  if(!empty($sizesLine)) {
-    $sizesNew[] = trim($sizesLine);
+  foreach ($sizesLines as $i => $sizesLine) {
+    if(!empty($sizesLine)) {
+      $sizesNew[] = trim($sizesLine);
+    }
   }
-}
 
-$sizes = implode($sizesNew);
+  $sizes = implode($sizesNew);
+}
 
 /*
  * generate srcset images
@@ -138,13 +140,13 @@ else {
  */
 
 $output  = '<img ';
-$output .= 'sizes="'. $sizes.'" ';
+$output .= (empty($sizes) ? '' : 'sizes="'. $sizes.'" ');
 $output .= 'srcset="'.$srcset.'" ';
 $output .= 'src="'.   $src.'" ';
-$output .= 'class="'. $attrClass.'" ';
-$output .= 'style="'. $attrStyle.'" ';
+$output .= (empty($attrClass) ? '' : 'class="'. $attrClass.'" ');
+$output .= (empty($attrStyle) ? '' : 'style="'. $attrStyle.'" ');
 $output .= 'alt="'.   $attrAlt.'" ';
-$output .=            $attrCustom;
+$output .= $attrCustom;
 $output .= '>';
 
 return $output;

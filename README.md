@@ -43,39 +43,39 @@ data-test="success">
 
 ## Parameters
 
-**input**
+### input
 
 Image source.
 
-**sizes**
-
-CSS rules that specifies image sizes for different page layouts.
-
-**srcset**
+### srcset
 
 Dimensions separated by comma, eg. "360,720,1280". From smallest to largest. If you need to crop your image, use WxH eg. "360x200,720x400,1280x400".
 
-**defaultSize** (optional) 
+### sizes (optional) 
+
+CSS rules that specifies image sizes for different page layouts. Optional but recommended.
+
+### defaultSize (optional) 
 
 Size used for fallback in src="" attribute. If not used, last dimension from srcset is used.
 
-**quality** (optional) 
+### quality (optional) 
 
 Quality of generated JPG files. Default: 80.
 
-**attrAlt** (optional) 
+### attrAlt (optional) 
 
 Value of alt="" attribute.
 
-**attrClass** (optional) 
+### attrClass (optional) 
 
 Value of class="" attribute.
 
-**attrStyle** (optional) 
+### attrStyle (optional) 
 
 Value of style="" attribute.
 
-**attrCustom** (optional) 
+### attrCustom (optional) 
 
 Any additional attributes you may need. Eg. data-test="success"
 

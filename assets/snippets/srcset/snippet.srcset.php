@@ -140,12 +140,12 @@ else {
  */
 
 $output  = '<img ';
-$output .= (empty($sizes) ? '' : 'sizes="'. $sizes.'" ');
-$output .= 'srcset="'.$srcset.'" ';
-$output .= 'src="'.   $src.'" ';
-$output .= (empty($attrClass) ? '' : 'class="'. $attrClass.'" ');
-$output .= (empty($attrStyle) ? '' : 'style="'. $attrStyle.'" ');
-$output .= 'alt="'.   $attrAlt.'" ';
+$output .= (empty($sizes) ? '' : 'sizes="' . $sizes . '" ');
+$output .= 'srcset="' . $srcset . '" ';
+$output .= 'src="' . $src . '" ';
+$output .= (empty($attrClass) ? '' : 'class="' . $attrClass . '" ');
+$output .= (empty($attrStyle) ? '' : 'style="' . $attrStyle . '" ');
+$output .= 'alt="' . htmlentities($attrAlt) . '" ';
 $output .= $attrCustom;
 $output .= '>';
 
